@@ -12,7 +12,8 @@ require_once('includes/database.php');
  $checkInTime=time('H:i:s');
  $checkOutTime=strtotime($checkOutTime);
  $otp=$guestName.strval($roomNo);
-	echo "otp=".$otp;
+ 
+  
 
 $sql="INSERT INTO users(guest_name,room_no,check_in_date,check_in_time,check_out_date,check_out_time,otp) VALUES ('{$guestName}','{$roomNo}',$checkInDate,$checkInTime,STR_TO_DATE($checkOutDate,'%Y,%m,%d'),$checkOutTime,'{$otp}')";
 // echo $sql;
