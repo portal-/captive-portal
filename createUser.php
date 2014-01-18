@@ -17,18 +17,21 @@
         require_once("navbar.php");
       ?>
       <div class="loginForm createUserForm">
-        <form class="form" method="POST" action="authenticate.php">
+        <form class="form" method="POST" action="userLogin.php">
           <input class="inputBox" name="guestName" placeholder="enter guest name" type="text" required/><br/>
-          <input class="inputBox" placeholder="enter room number" type="text" required/><br/>
-          <label>Enter check-in time </label><br/>
-          <input class="inputBox" type="date" required/>
+          <input class="inputBox" name="roomNo" placeholder="enter room number" type="text" required/><br/>
+         <!--  <label>Enter check-in time </label><br/>
+          <input class="inputBox" name type="date" required/>
           <input class="inputBox" type="time" required/><br/>
-          
+          --> 
           <label>Enter check-out time and date</label><br/>
-          <input class="inputBox" type="date" required/>
-          <input class="inputBox" type="time" required/><br/>
-          <button>generate OTP</button><br/>
-          <input class="button"  type="submit"/> 
+          <input class="inputBox" name="checkOutDate" type="date" required/>
+          <input class="inputBox" name="checkOutTime" type="time" required/><br/>
+          <!-- <button>generate OTP</button><br/> -->
+          <input class="button"  type="submit" value="submit"/> 
+
+
+          
         </form>
       </div>
     </center>    
