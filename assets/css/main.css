@@ -1,0 +1,74 @@
+.loginForm
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 182px;
+  width: 310px;
+  border: solid 1px #A5DA00;
+  border-radius: 3px;
+  background: white;
+}
+.inputBox
+{
+  border: solid 1px #7A7A7A;
+  padding: 6px 20px;
+  border-radius: 2px;
+  text-align: center;
+
+}
+.button
+{
+  padding: 5px 8px;
+  margin: 10px;
+}
+.form
+{
+  margin: 50px;
+}
+body
+{
+  background: rgb(253, 255, 242);
+}
+table
+{
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.user-log thead tr th
+{
+  padding: 20px;
+  border: 1px solid rgb(78, 148, 13);
+  text-align: center;
+  background: rgba(226, 255, 199, 0.4);
+}
+.user-log tbody tr td
+{
+  padding: 5px;
+  border: 1px solid rgb(78, 148, 13);
+  text-align: center;
+  background: white;
+}
+#log-out
+{
+  float: right
+}
+.navbar
+{
+  width: 50%;
+  height: 30px;
+  background: #196900;
+}
+.navbar a
+{
+  color: white;
+  text-decoration: none;
+  background: rgb(52, 141, 2);
+  padding: 10px;
+}
