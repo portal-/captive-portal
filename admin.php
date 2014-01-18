@@ -18,11 +18,9 @@
       <div>
         <h1>Admin Panel</h1>
       </div>
-      <nav class="navbar">
-        <a href="">Create guest</a>
-        <a href="">delete guest</a>
-        <a href="">Logout</a>
-      </nav>
+      <?php 
+        require_once("navbar.php");
+      ?>
       <div class="admin-table-div">
         <table class="user-log">
           <thead>
