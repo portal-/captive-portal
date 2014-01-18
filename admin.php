@@ -1,3 +1,9 @@
+<?php 
+require_once('includes/config.php');
+require_once('includes/database.php');
+?>
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,9 +24,11 @@
       <div>
         <h1>Admin Panel</h1>
       </div>
-      <?php 
-        require_once("navbar.php");
-      ?>
+      <nav class="navbar">
+        <a href="">Create guest</a>
+        <a href="">delete guest</a>
+        <a href="">Logout</a>
+      </nav>
       <div class="admin-table-div">
         <table class="user-log">
           <thead>
@@ -34,14 +42,28 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Kunal Kerkar</td>
-              <td>4</td>
-              <td>22-05-2014</td>
-              <td>26-05-2014</td>
-              <td>Kunal4</td>
-            </tr>
+             
+
+            <?php 
+          
+
+                  $sql="SELECT * FROM  users";
+                  $result=$database->query($sql);
+                  while($row=$database->fetch_assoc($result))
+                  {
+                    echo "<tr>";
+                    echo "<td>".$row['id']."</td>";
+                    echo "<td>".$row['guest_name']."</td>";
+                    echo "<td>".$row['room_no']."</td>";
+                    echo "<td>".$row['check_in_date']."</td>";
+                    echo "<td>".$row['check_in_date']."</td>";
+                    echo "</tr>";
+                  }
+
+               
+
+            ?>
+
           </tbody>
         </table>
       </div>
