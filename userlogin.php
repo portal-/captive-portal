@@ -14,16 +14,13 @@ require_once('includes/database.php');
    // 	echo "false";
    // }
 
-$checkindate=date('Y - m - d');
+$checkindate=date('Y-m-d');
 
 
 
-$sql="INSERT INTO users(id,guest_name, room_no,check_in_date,check_out_date) VALUES (2,'ANKITA','53','{$checkindate}','{$checkindate}')";
+$sql="INSERT INTO users(id,guest_name, room_no,check_in_date,check_out_date) VALUES (4,'ANKITA','53','{$checkindate}','{$checkindate}')";
 
 $result=$database->query($sql);
-
-
-
 
 
 
