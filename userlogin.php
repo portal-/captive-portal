@@ -10,13 +10,13 @@ require_once('includes/database.php');
  $checkOutTime=$_POST['checkOutTime'];
  $checkInDate=date('Y-m-d');
  $checkInTime=time('H:i:s');
- $checkOutTime=strtotime($checkOutTime);
+ // $checkOutTime=strtotime$checkOutTime);
  $otp=$guestName.strval($roomNo);
  
-  
 
-$sql="INSERT INTO users(guest_name,room_no,check_in_date,check_in_time,check_out_date,check_out_time,otp) VALUES ('{$guestName}','{$roomNo}',$checkInDate,$checkInTime,STR_TO_DATE($checkOutDate,'%Y,%m,%d'),$checkOutTime,'{$otp}')";
-// echo $sql;
+
+$sql="INSERT INTO users(guest_name,room_no,check_in_date,check_in_time,check_out_date,check_out_time,otp) VALUES ('{$guestName}','{$roomNo}','{$checkInDate}','{$checkInTime}','{$checkOutDate}','{$checkOutTime}','{$otp}')";
+echo $sql;
 $result=$database->query($sql);
 ?>
 
