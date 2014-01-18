@@ -18,7 +18,7 @@
       ?>
       <div class="loginForm createUserForm">
         <form class="form" method="POST" action="authenticate.php">
-          <input class="inputBox" placeholder="enter guest name" type="text" required/><br/>
+          <input class="inputBox" name="guestName" placeholder="enter guest name" type="text" required/><br/>
           <input class="inputBox" placeholder="enter room number" type="text" required/><br/>
           <label>Enter check-in time </label><br/>
           <input class="inputBox" type="date" required/>
