@@ -36,8 +36,11 @@ require_once('includes/database.php');
               <th>Sr no.</th>
               <th>Guest name</th>
               <th>Room no.</th>
-              <th>check-in date</th>
-              <th>check-out date</th>
+              <th>check in date</th>
+              <th>check out date</th>
+              <th>check out time</th>
+              <th>check in time</th>
+              
               <th>OTP</th>
             </tr>
           </thead>
@@ -49,19 +52,26 @@ require_once('includes/database.php');
 
                   $sql="SELECT * FROM  users";
                   $result=$database->query($sql);
+                  $srNo=1;
                   while($row=$database->fetch_assoc($result))
                   {
+
                     echo "<tr>";
-                    echo "<td>".$row['id']."</td>";
+                    echo "<td>".$srNo."</td>";
                     echo "<td>".$row['guest_name']."</td>";
                     echo "<td>".$row['room_no']."</td>";
                     echo "<td>".$row['check_in_date']."</td>";
-                    echo "<td>".$row['check_in_date']."</td>";
+                    echo "<td>".$row['check_out_date']."</td>";
+                    echo "<td>".$row['check_in_time']."</td>";
+                    echo "<td>".$row['check_out_time']."</td>";
+                    echo "<td>".$row['otp']."</td>";
+                    
+                    
                     echo "</tr>";
+                     $srNo+=1;
                   }
 
                
-
             ?>
 
           </tbody>

@@ -49,6 +49,12 @@ class MySQLDatabase{
 		return mysql_fetch_assoc($result_set);
 	}
 
+	public function num_rows($result_set)
+	{
+		return mysql_num_rows($result_set);
+
+	}
+
 
 	public function query($sql)
 	{

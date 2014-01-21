@@ -1,3 +1,62 @@
+
+<?php 
+     require_once('includes/config.php');
+     require_once('includes/database.php');
+        
+
+     session_start();
+     $_SESSION['access']=NULL;
+     global $msg;
+     $msg='';
+     
+
+     if(!empty($_POST))
+     {
+         $otp=$_POST['otp'];
+         $sql="SELECT * FROM users WHERE OTP='{$otp}' LIMIT 1"; 
+         $result=$database->query($sql);
+         $time_now=time();
+         $query_num_rows=$database->num_rows($result);
+        
+           if($query_num_rows==0)
+           {
+            // header('Location:index.php'); 
+            $msg= "<p style='color:red;'>you are not registered please register yourself</p><br>";
+
+           }
+           else if($query_num_rows==1)
+           {
+            
+             
+                     
+              while($row=$database->fetch_assoc($result))
+                {
+                  $val=$row['otp_expiry'];
+                  
+                  if($time_now>$val)
+                  {
+                    $msg = "<p style='color:red;'>otp expired</p><br>";
+                  }
+                  else
+                  {
+                     $msg = "<p style='color:green'>you are successfull logged in</p><br>";
+                  }
+
+                 }    
+             
+
+           }
+            
+ 
+
+     }
+    
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,9 +70,11 @@
   <body>
     <div class="loginForm">
       <center>
-        <form class="form" method="POST" action="authenticate.php">
-          <input class="inputBox" placeholder="please enter the PIN" type="text" required/><br/>
-          <input class="button"  type="submit"/> 
+        <form class="form" method="POST" action=<?php echo $_SERVER['PHP_SELF']; ?> >
+          <input class="inputBox" name="otp" placeholder="please enter the PIN" type="text" required/><br/>
+          <input class="button"  type="submit" value="submit"/> 
+          <?php echo $msg ?>
+
         </form>
       </center>
     </div>
